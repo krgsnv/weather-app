@@ -1,0 +1,15 @@
+.search {
+    position: relative;
+    &::before {
+        position: absolute;
+        left: 10px;
+        top: calc(50% - 30px/2); 
+        font-size: 30px;
+    }
+}
+.input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px;
+    outline: 0;
+}
