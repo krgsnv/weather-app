@@ -1,4 +1,24 @@
 * {
   box-sizing: border-box;
-  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  color: white;
+  font: 24px 'Roboto', sans-serif;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: linear-gradient(243.18deg, #1c565e 0%, #3dc7da 100%);
+  height: 100vh;
+  display: flex;
+}
+
+.main {
+  flex-basis: 60%;
 }

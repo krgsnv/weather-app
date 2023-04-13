@@ -1,0 +1,61 @@
+.wrapper {
+  padding: 5% 8%;
+  font-weight: 300;
+}
+
+.temperature {
+  font-size: 164px;
+  font-weight: 100;
+}
+
+.degrees {
+  font-size: 70px;
+  vertical-align: top;
+}
+
+.decription {
+  margin-top: 40px;
+  font-size: 40px;
+}
+
+.date {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.rainfall {
+  display: flex;
+  margin-top: 60px;
+  line-height: 1.4;
+  &__elem {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.wind {
+  padding-right: 20px;
+  border-right: 2px solid white;
+  &::before {
+    content: url('../../assets/img/wind.svg');
+    margin-right: 15px;
+  }
+}
+
+.humidity {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-right: 2px solid white;
+  &::before {
+    content: url('../../assets/img/hum.svg');
+    margin-right: 15px;
+  }
+}
+
+.rain {
+  padding-left: 20px;
+  &::before {
+    content: url('../../assets/img/rain.svg');
+    margin-right: 15px;
+  }
+}

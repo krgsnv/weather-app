@@ -1,16 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-import Search from './components/Search/Search'
+import DayWeather from './components/DayWeather/DayWeather';
+import WeekWeather from './components/WeekWeather/WeekWeather';
+import Sidebar from './components/Sidebar/Sidebar';
 
-import './App.scss'
+import './App.scss';
 
 function App() {
-
   return (
-    <div>
-      <Search />
+    <div className="container">
+      <main className="main">
+        <DayWeather />
+        <WeekWeather />
+      </main>
+      <Sidebar />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
