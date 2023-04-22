@@ -1,0 +1,15 @@
+.wrapper {
+    margin-top: 40px;
+    margin-left: 20px;
+    display: flex;
+    column-gap: 2%;
+    font-size: .8em;
+}
+
+.weekday {
+    background: rgba(214, 214, 214, 0.4);
+    border-radius: 20px;
+    border: 1px solid rgba(38, 38, 38, 0);
+    text-align: center;
+    padding: 20px ;
+}

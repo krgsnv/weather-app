@@ -6,6 +6,7 @@ body {
   margin: 0;
   color: white;
   font: 24px 'Roboto', sans-serif;
+  line-height: 1.3;
 }
 
 p {
@@ -14,11 +15,12 @@ p {
 }
 
 .container {
-  background: linear-gradient(243.18deg, #1c565e 0%, #3dc7da 100%);
-  height: 100vh;
+  background: linear-gradient(243.18deg, #56a3ad 0%, #4983c7 100%);
   display: flex;
+  min-height: 100vh;
 }
 
 .main {
   flex-basis: 60%;
+  padding: 4% 1%;
 }

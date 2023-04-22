@@ -2,7 +2,9 @@ import React from 'react';
 
 import styles from './DayWeather.module.scss';
 
-function DayWeather() {
+function DayWeather({weatherResponse}) {
+  const wordCapitalize = (word) => word[0].toUpperCase() + word.slice(1);
+
   const getDate = () => {
     const monthNames = [
         'января',
@@ -30,31 +32,32 @@ function DayWeather() {
       date = new Date(),
       day = date.getDay(),
       weekDay = weekNames[day];
-    return weekDay[0].toUpperCase() + weekDay.slice(1);
+    return wordCapitalize(weekDay);
   };
 
+  const {coord, weather, base, main, visibility, wind, ...rest} = weatherResponse;
+  
   return (
     <section className={styles.wrapper}>
-      <img src="https://openweathermap.org/img/wn/10d@2x.png" />
-      <div>
-        <span className={styles.temperature}>26</span> <sup className={styles.degrees}>°C</sup>
-      </div>
+      {/* <div className="">{JSON.stringify(weather)}</div>  */}
+      <img src={`https://openweathermap.org/img/wn/${weather ? weather[0]["icon"] : ""}@2x.png`} />
+      <span className={styles.temperature}>{main ? parseInt(main["temp"]) : ""}</span> <sup className={styles.degrees}>°C</sup>
       <div className={styles.decription}>
-        <div>Облачно</div>
+        <div>{weather ? wordCapitalize(weather[0]["description"]) : ""}</div>
         <div className={styles.date}>{`${getWeekDay()} ${getDate()} `}</div>
       </div>
       <div className={styles.rainfall}>
         <div className={`${styles.wind} ${styles['rainfall__elem']}`}>
-          <div>Ветер: </div>
-          10 км/ч
+          Ветер: 
+          <span> {wind ? parseInt(wind["speed"]) : ""} м/с</span>
         </div>
         <div className={`${styles.humidity} ${styles['rainfall__elem']}`}>
-          <div>Влажность: </div>
-          29 %
+          Влажность: 
+          <span> {main ? parseInt(main["humidity"]) : ""} %</span>
         </div>
         <div className={`${styles.rain} ${styles['rainfall__elem']}`}>
-          <div>Вероятность дождя: </div>
-          0.2 %
+          Вероятность дождя: 
+          <span> 0.2 %</span>
         </div>
       </div>
     </section>
